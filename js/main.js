@@ -1,21 +1,34 @@
+const getSale = (code) => {
+    let codes = {
+        newYear: 10,
+        some: 20
+    };
+    let sale = (codes[code] !== undefined) ? codes[code] : 0;
+    return sale;
+};
+
 const sample = new Vue({
     el: '.sample',
     data: {
-        name: 'Sergey',
-        showName: true
+        firstName: '',
+        lastName: '',
+        fullName: '',
+        promo: '',
+        showText: true
     },
-    methods: {
-        onChange(e) {
-            console.log(this);
-            console.log(e);
+    computed: {
+        fullName()
+        {
+            console.log('render full name');
+            return this.firstName + ' ' + this.lastName;
         },
-        toggleName() {
-            this.showName =! this.showName
+        sale() {
+            return getSale(this.promo);
         }
+    },
+    watch: {
+    
     }
 });
 
-window.addEventListener('resize', () => {
-    sample.name = ''
-});
 console.log(sample);
