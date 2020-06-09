@@ -1,12 +1,16 @@
 const sample = new Vue({
     el: '.sample',
     data: {
-        name: 'Sergey'
+        name: 'Sergey',
+        showName: true
     },
     methods: {
         onChange(e) {
             console.log(this);
             console.log(e);
+        },
+        toggleName() {
+            this.showName =! this.showName
         }
     }
 });
@@ -14,3 +18,4 @@ const sample = new Vue({
 window.addEventListener('resize', () => {
     sample.name = ''
 });
+console.log(sample);

@@ -14,10 +14,27 @@
     <input type="text"
             v-on:input="name = $event.target.value"
            v-on:change="onChange"
-           v-bind:value="name"
-            >
+           v-bind:value="name">
+<br>
+
+    <button class="btn btn-success mt-5"
+            v-on:click="showName =! showName"
+    >
+      Toggle Name
+    </button>
+    <br>
+
+    <button
+      class="btn btn-success mt-5"
+      @click="toggleName">
+      Toggle Name 2
+    </button>
     <hr>
-    <h2>Hello, {{ name }}</h2>
+    <h2 v-if="showName">Hello, {{ name }}</h2>
+    <div v-else>Name is hidden</div>
+
+    </div>
+
   </div>
 </div>
 <script src="js/vue.js"></script>
