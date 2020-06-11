@@ -5,14 +5,18 @@ const sample = new Vue({
     data: {
         numbers: [
         
-        ]
+        ],
+        info: {
+            name: 'Dmitriy',
+            email: 'admin@test.info'
+        }
     },
     computed: {
     },
     methods: {
         addNumber() {
             this.numbers.push(Math.floor(Math.random() * 10));
-            this.sortNumbers();
+            //this.sortNumbers();
         },
         sortNumbers() {
             this.numbers.sort((a, b) => {

@@ -11,13 +11,23 @@
 <body>
 <div class="wrapper">
   <div class="sample">
-    <button class="btn btn-success" @click="addNumber">Add number</button><br>
+    <button class="btn btn-success" @click="addNumber">Add number</button>
+    <br>
+    <br>
     <button class="btn btn-success" @click="sortNumbers">Sort number</button><br>
     <ul>
-      <li v-for="number in numbers">
-        {{ number }}
+      <li v-for="(number, index) in numbers">
+        {{index}} - {{ number }}
       </li>
     </ul>
+    <hr>
+    <table class="table table-bordered">
+      <tr v-for="(value, key, i) in info">
+        <td>{{ i+1}}</td>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 
