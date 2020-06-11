@@ -11,14 +11,13 @@
 <body>
 <div class="wrapper">
   <div class="sample">
-    <input type="text" v-model="firstName">
-    <br>
-    <input type="text" v-model="lastName">
-    <hr>
-    <input type="text" v-model="promo">
-    <hr>
-    <div v-show="showText">Your sale is {{ sale }} %.</div>
-    <h2>Hello, {{ fullName }}</h2>
+    <button class="btn btn-success" @click="addNumber">Add number</button><br>
+    <button class="btn btn-success" @click="sortNumbers">Sort number</button><br>
+    <ul>
+      <li v-for="number in numbers">
+        {{ number }}
+      </li>
+    </ul>
   </div>
 </div>
 
